@@ -26,19 +26,17 @@ function App() {
     track: {},
   })(Switch);
 
-  const dictAPI = async () => {
-    try {
-      const data = await axios.get(
-        `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
-      );
-      setWordData(data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    dictAPI();
+    (async () => {
+      try {
+        const data = await axios.get(
+          `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
+        );
+        setWordData(data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, [word, category]);
   return (
     <div
