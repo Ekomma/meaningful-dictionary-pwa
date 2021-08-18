@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# A dictionary React App as a PWA
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
